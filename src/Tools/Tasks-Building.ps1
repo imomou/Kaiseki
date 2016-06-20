@@ -144,7 +144,7 @@ Task New-NugetPackagesFromSpecFiles -depends Execute-MsBuild {
 
     foreach($nuspecFile in $nuspecFiles) {
         Write-Host "> Packing $($nuspecFile.FullName)"
-        &"$NugetBinPath" $command $nuspecFile.FullName -Version -Prop Version=$AssemblyVersion
+        &"$NugetBinPath" $command $nuspecFile.FullName -Prop Version=$AssemblyVersion
     }
 
     Write-Host "> Moving nuget packages to artefact path"
